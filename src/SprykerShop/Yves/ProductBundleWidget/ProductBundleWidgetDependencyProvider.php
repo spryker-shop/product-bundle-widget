@@ -30,11 +30,6 @@ class ProductBundleWidgetDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addProductBundleClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_BUNDLE, function (Container $container) {

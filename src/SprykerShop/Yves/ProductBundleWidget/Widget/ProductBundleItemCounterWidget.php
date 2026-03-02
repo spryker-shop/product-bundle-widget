@@ -17,9 +17,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductBundleItemCounterWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     */
     public function __construct(QuoteTransfer $quoteTransfer)
     {
         $this->addParameter('items', $this->transformCartItems($quoteTransfer->getItems(), $quoteTransfer))
@@ -63,17 +60,11 @@ class ProductBundleItemCounterWidget extends AbstractWidget
             ->getGroupedBundleItems($cartItems, $quoteTransfer->getBundleItems());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductBundleItemCounterWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductBundleWidget/views/multi-cart-items-counter/multi-cart-items-counter.twig';

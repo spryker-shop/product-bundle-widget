@@ -16,25 +16,16 @@ use SprykerShop\Yves\ProductBundleWidget\Mapper\BundleItemMapperInterface;
 
 class ProductBundleWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductBundleWidget\ItemFetcher\BundleItemFetcherInterface
-     */
     public function createBundleItemFetcher(): BundleItemFetcherInterface
     {
         return new BundleItemFetcher();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductBundleWidget\Mapper\BundleItemMapperInterface
-     */
     public function createBundleItemMapper(): BundleItemMapperInterface
     {
         return new BundleItemMapper();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductBundleWidget\Dependency\Client\ProductBundleWidgetToProductBundleClientInterface
-     */
     public function getProductBundleClient(): ProductBundleWidgetToProductBundleClientInterface
     {
         return $this->getProvidedDependency(ProductBundleWidgetDependencyProvider::CLIENT_PRODUCT_BUNDLE);

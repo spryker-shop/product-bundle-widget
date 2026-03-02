@@ -42,12 +42,6 @@ class ProductBundleCartItemTransformerPlugin extends AbstractPlugin implements C
         return $transformedCartItems;
     }
 
-    /**
-     * @param array $cartItems
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     protected function getGroupedItems(array $cartItems, QuoteTransfer $quoteTransfer): array
     {
         return $this->getFactory()

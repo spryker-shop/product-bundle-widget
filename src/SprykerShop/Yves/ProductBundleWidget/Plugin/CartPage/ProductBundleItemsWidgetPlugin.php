@@ -20,12 +20,6 @@ use SprykerShop\Yves\ProductBundleWidget\Widget\ProductBundleCartItemsListWidget
  */
 class ProductBundleItemsWidgetPlugin extends AbstractWidgetPlugin implements ProductBundleItemsWidgetPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function initialize(ItemTransfer $itemTransfer, QuoteTransfer $quoteTransfer): void
     {
         $widget = new ProductBundleCartItemsListWidget($itemTransfer, $quoteTransfer);
@@ -33,28 +27,16 @@ class ProductBundleItemsWidgetPlugin extends AbstractWidgetPlugin implements Pro
         $this->parameters = $widget->getParameters();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return ProductBundleCartItemsListWidget::getTemplate();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     protected function getBundleItems(ItemTransfer $itemTransfer, QuoteTransfer $quoteTransfer): array
     {
         $groupedItems = $this->getGroupedItems($quoteTransfer);
@@ -73,11 +55,6 @@ class ProductBundleItemsWidgetPlugin extends AbstractWidgetPlugin implements Pro
         return [];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     protected function getGroupedItems(QuoteTransfer $quoteTransfer): array
     {
         return $this->getFactory()

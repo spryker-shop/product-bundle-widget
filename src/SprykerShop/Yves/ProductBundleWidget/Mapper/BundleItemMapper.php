@@ -48,12 +48,6 @@ class BundleItemMapper implements BundleItemMapperInterface
         return $attributes;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderRequestTransfer
-     */
     public function mapRequestToCartReorderRequest(
         Request $request,
         CartReorderRequestTransfer $cartReorderRequestTransfer

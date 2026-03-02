@@ -27,9 +27,6 @@ class BundleItemFetcherTest extends Unit
      */
     protected const TEST_BUNDLE_ITEM_IDENTIFIER = 'bundle-item';
 
-    /**
-     * @return void
-     */
     public function testFetchSelectedBundleItemsWillReturnItemTransferWhenBundleItemIdentifierIsProvided(): void
     {
         // Arrange
@@ -50,9 +47,6 @@ class BundleItemFetcherTest extends Unit
         $this->assertSame(static::TEST_BUNDLE_ITEM_IDENTIFIER, $itemTransfers[0]->getBundleItemIdentifier());
     }
 
-    /**
-     * @return void
-     */
     public function testFetchSelectedBundleItemsWillReturnEmptyArrayWhenBundleItemIdentifierIsNotProvided(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class BundleItemFetcherTest extends Unit
         $this->assertCount(0, $itemTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testFetchSelectedBundleItemsWillReturnEmptyArrayWhenProvidedBundleItemIdentifierIsNotFoundInItemTransfers(): void
     {
         // Arrange
@@ -92,9 +83,6 @@ class BundleItemFetcherTest extends Unit
         $this->assertCount(0, $itemTransfers);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductBundleWidget\ItemFetcher\BundleItemFetcherInterface
-     */
     protected function createBundleItemFetcher(): BundleItemFetcherInterface
     {
         return new BundleItemFetcher();

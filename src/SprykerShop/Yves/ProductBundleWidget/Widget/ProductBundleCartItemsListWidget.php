@@ -16,37 +16,21 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductBundleCartItemsListWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     */
     public function __construct(ItemTransfer $itemTransfer, QuoteTransfer $quoteTransfer)
     {
         $this->addParameter('bundleItems', $this->getBundleItems($itemTransfer, $quoteTransfer));
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductBundleCartItemsListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductBundleWidget/views/cart-bundle-items-list/cart-bundle-items-list.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     protected function getBundleItems(ItemTransfer $itemTransfer, QuoteTransfer $quoteTransfer): array
     {
         $groupedItems = $this->getGroupedItems($quoteTransfer);
@@ -65,11 +49,6 @@ class ProductBundleCartItemsListWidget extends AbstractWidget
         return [];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     protected function getGroupedItems(QuoteTransfer $quoteTransfer): array
     {
         return $this->getFactory()

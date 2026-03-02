@@ -17,10 +17,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductBundleMultiCartItemsListWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param int|null $itemDisplayLimit
-     */
     public function __construct(QuoteTransfer $quoteTransfer, ?int $itemDisplayLimit = null)
     {
         $items = $this->transformCartItems($quoteTransfer->getItems(), $quoteTransfer);
@@ -69,17 +65,11 @@ class ProductBundleMultiCartItemsListWidget extends AbstractWidget
             ->getGroupedBundleItems($cartItems, $quoteTransfer->getBundleItems());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductBundleMultiCartItemsListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductBundleWidget/views/multi-cart-items-list/multi-cart-items-list.twig';

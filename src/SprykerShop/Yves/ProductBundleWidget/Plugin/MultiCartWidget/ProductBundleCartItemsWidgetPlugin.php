@@ -19,12 +19,6 @@ use SprykerShop\Yves\ProductBundleWidget\Widget\ProductBundleMultiCartItemsListW
  */
 class ProductBundleCartItemsWidgetPlugin extends AbstractWidgetPlugin implements ProductBundleCartItemsWidgetPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param int|null $itemDisplayLimit
-     *
-     * @return void
-     */
     public function initialize(QuoteTransfer $quoteTransfer, ?int $itemDisplayLimit = null): void
     {
         $widget = new ProductBundleMultiCartItemsListWidget($quoteTransfer, $itemDisplayLimit);

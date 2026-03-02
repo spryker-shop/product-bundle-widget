@@ -21,12 +21,6 @@ interface BundleItemMapperInterface
      */
     public function mapProductBundleAttributes(array $attributes, ItemTransfer $itemTransfer): array;
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderRequestTransfer
-     */
     public function mapRequestToCartReorderRequest(
         Request $request,
         CartReorderRequestTransfer $cartReorderRequestTransfer
