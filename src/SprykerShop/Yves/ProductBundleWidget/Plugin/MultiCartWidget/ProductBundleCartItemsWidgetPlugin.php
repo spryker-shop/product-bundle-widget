@@ -19,6 +19,11 @@ use SprykerShop\Yves\ProductBundleWidget\Widget\ProductBundleMultiCartItemsListW
  */
 class ProductBundleCartItemsWidgetPlugin extends AbstractWidgetPlugin implements ProductBundleCartItemsWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(QuoteTransfer $quoteTransfer, ?int $itemDisplayLimit = null): void
     {
         $widget = new ProductBundleMultiCartItemsListWidget($quoteTransfer, $itemDisplayLimit);
@@ -27,7 +32,7 @@ class ProductBundleCartItemsWidgetPlugin extends AbstractWidgetPlugin implements
     }
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Returns the name of the widget as it's used in templates.
      *
      * @api
@@ -40,7 +45,7 @@ class ProductBundleCartItemsWidgetPlugin extends AbstractWidgetPlugin implements
     }
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Returns the template file path to render the widget.
      *
      * @api

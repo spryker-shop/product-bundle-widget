@@ -20,6 +20,11 @@ use SprykerShop\Yves\ProductBundleWidget\Widget\ProductBundleCartItemsListWidget
  */
 class ProductBundleItemsWidgetPlugin extends AbstractWidgetPlugin implements ProductBundleItemsWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(ItemTransfer $itemTransfer, QuoteTransfer $quoteTransfer): void
     {
         $widget = new ProductBundleCartItemsListWidget($itemTransfer, $quoteTransfer);
@@ -27,11 +32,21 @@ class ProductBundleItemsWidgetPlugin extends AbstractWidgetPlugin implements Pro
         $this->parameters = $widget->getParameters();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return ProductBundleCartItemsListWidget::getTemplate();
