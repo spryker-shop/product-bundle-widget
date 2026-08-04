@@ -1,5 +1,11 @@
+@use 'sass:meta';
+
 @mixin product-bundle-widget-bundle-items($name: '.bundle-items') {
     #{$name} {
+        @if meta.mixin-exists(product-bundle-widget-bundle-items-base-hook) {
+            @include product-bundle-widget-bundle-items-base-hook;
+        }
+
         &__name {
             display: block;
             color: $setting-color-text;
